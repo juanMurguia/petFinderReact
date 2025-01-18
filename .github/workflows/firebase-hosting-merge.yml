@@ -26,6 +26,10 @@ jobs:
       - name: Install dependencies
         run: npm install
 
+      # Step 3.1: Install Firebase CLI globally
+      - name: Install Firebase CLI
+        run: npm install -g firebase-tools
+
       # Step 4: Build the project
       - name: Build the project
         run: npm run build
@@ -38,3 +42,5 @@ jobs:
           firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_PET_FINDER_REACT_3C94D }}
           channelId: live
           projectId: pet-finder-react-3c94d
+        env:
+          DEBUG: true
